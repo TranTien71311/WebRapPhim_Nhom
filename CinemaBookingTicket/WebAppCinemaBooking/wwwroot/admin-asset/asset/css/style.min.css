@@ -1,3 +1,13 @@
+#btn-light {
+    background-color: #26c6da;
+    width: 300px;
+}
+
+#btn-dark {
+    background-color: #1ea6c1;
+    width: 300px;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");@import url(icons/font-awesome/css/fontawesome-all.css);@import url(icons/material-design-iconic-font/css/materialdesignicons.min.css);@import url(icons/simple-line-icons/css/simple-line-icons.css);@import url(icons/themify-icons/themify-icons.css);.topbar .dropdown-menu .with-arrow>span{transform:rotate(45deg);-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-moz-transform:rotate(45deg)}
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)

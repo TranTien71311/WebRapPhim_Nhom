@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebAppCinemaBooking.Areas.Admin.Models.Cinema>
+﻿@model IEnumerable<WebAppCinemaBooking.Areas.Admin.Models.Room>
 
 @{
     ViewData["Title"] = "Index";
@@ -29,35 +29,35 @@
     }
 </style>
 
-<h1>Danh Sách Rạp Phim</h1>
+<h1>Phòng</h1>
 
 <p>
-    <a asp-action="Create"class="btn btn-block" style="background-color: #26c6da;">Thêm Rạp Phim</a>
+    <a asp-action="Create" class="btn btn-block" style="background-color: #26c6da;">Thêm Phòng</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                Tên Rạp
+                Tên Phòng:
             </th>
             <th>
-                Địa Chỉ Rạp
+                Rạp Phim:
             </th>
             <th>
-                Trạng Thái
+                Trạng Thái:
             </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
+@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Address)
+                @Html.DisplayFor(modelItem => item.Cinema.Name)
             </td>
             <td>
                 @if (item.Status == 1)
@@ -77,6 +77,6 @@
                 </div>
             </td>
         </tr>
-        }
+}
     </tbody>
 </table>

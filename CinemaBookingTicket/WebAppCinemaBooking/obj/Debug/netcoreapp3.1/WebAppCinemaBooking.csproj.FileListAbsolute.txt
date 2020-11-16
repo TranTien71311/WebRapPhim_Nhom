@@ -336,3 +336,8 @@ C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Stafs\Details.cshtml.g.cs
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Stafs\Edit.cshtml.g.cs
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Stafs\Index.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Rooms\Create.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Rooms\Delete.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Rooms\Details.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Rooms\Edit.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Rooms\Index.cshtml.g.cs

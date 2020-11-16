@@ -1,0 +1,42 @@
+﻿@model WebAppCinemaBooking.Areas.Admin.Models.Room
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Chi Tiết Phòng</h1>
+
+<div>
+    <h4>Phòng</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           Tên Phòng:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Sức Chứa:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+        <dt class = "col-sm-2">
+           Trạng Thái:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class = "col-sm-2">
+            Rạp Phim:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cinema.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn" style="width:300px;margin-bottom: 10px;background-color: #26c6da;">Sửa</a><br />
+    <a asp-action="Index" class="btn" style="width:300px;margin-bottom: 10px;background-color: #1ea6c1;">Trở Về</a>
+</div>

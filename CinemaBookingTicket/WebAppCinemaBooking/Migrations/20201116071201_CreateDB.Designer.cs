@@ -9,7 +9,7 @@ using WebAppCinemaBooking.Areas.Admin.Data;
 namespace WebAppCinemaBooking.Migrations
 {
     [DbContext(typeof(DPContext))]
-    [Migration("20201116022437_CreateDB")]
+    [Migration("20201116071201_CreateDB")]
     partial class CreateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,6 +52,33 @@ namespace WebAppCinemaBooking.Migrations
                     b.ToTable("Cinemas");
                 });
 
+            modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Room", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cinema_ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("Cinema_ID");
+
+                    b.ToTable("Rooms");
+                });
+
             modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Staf", b =>
                 {
                     b.Property<int>("ID")
@@ -63,7 +90,6 @@ namespace WebAppCinemaBooking.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Avatar")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -98,6 +124,22 @@ namespace WebAppCinemaBooking.Migrations
                         .IsRequired();
 
                     b.Navigation("Staf");
+                });
+
+            modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Room", b =>
+                {
+                    b.HasOne("WebAppCinemaBooking.Areas.Admin.Models.Cinema", "Cinema")
+                        .WithMany("listRoom")
+                        .HasForeignKey("Cinema_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cinema");
+                });
+
+            modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Cinema", b =>
+                {
+                    b.Navigation("listRoom");
                 });
 
             modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Staf", b =>

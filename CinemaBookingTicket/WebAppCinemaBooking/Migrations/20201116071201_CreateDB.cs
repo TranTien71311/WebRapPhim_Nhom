@@ -48,14 +48,44 @@ namespace WebAppCinemaBooking.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Rooms",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Capacity = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    Cinema_ID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rooms", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Rooms_Cinemas_Cinema_ID",
+                        column: x => x.Cinema_ID,
+                        principalTable: "Cinemas",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Cinemas_Manager_ID",
                 table: "Cinemas",
                 column: "Manager_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rooms_Cinema_ID",
+                table: "Rooms",
+                column: "Cinema_ID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Rooms");
+
             migrationBuilder.DropTable(
                 name: "Cinemas");
 

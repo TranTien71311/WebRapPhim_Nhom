@@ -19,23 +19,20 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Email Nhân Viên:</label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" type="email"/>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Mật Khẩu:</label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" class="form-control"type="password" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="ful" name="ful" />
                 <label class="custom-file-label" for="ful">Choose file</label>
-                @*<label asp-for="HinhAnh" class="control-label"></label>
-                    <input asp-for="HinhAnh" class="form-control" />
-                    <span asp-validation-for="HinhAnh" class="text-danger"></span>*@
             </div>
             <div class="form-group">
-                <img id="imgPre" src="~/admin-asset/noimage.png" alt="no image" class="img-thumbnail" />
+                <img id="imgPre" src="~/admin-asset/noimage.png" alt="no image" class="img-thumbnail"style="max-width:300px" />
             </div>
             <div class="form-group">
                 <label class="control-label">Số Điện Thoại:</label>
@@ -44,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Địa Chỉ:</label>
-                <input asp-for="Address" class="form-control" />
+                <textarea asp-for="Address" class="form-control" rows="3"></textarea>
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -56,14 +53,14 @@
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Thêm" class="btn btn-primary" />
+                <input type="submit" value="Thêm" class="btn "style="width:300px;background-color: #26c6da;" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Trở Về</a>
+    <a asp-action="Index"class="btn "style="width:300px;margin-bottom: 10px;background-color: #1ea6c1;">Trở Về</a>
 </div>
 
 @section Scripts {
