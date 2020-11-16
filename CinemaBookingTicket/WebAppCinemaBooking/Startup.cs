@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebAppCinemaBooking.Areas.Admin_0306181057.Data;
+using WebAppCinemaBooking.Areas.Admin.Data;
 
 namespace WebAppCinemaBooking
 {

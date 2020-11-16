@@ -1,0 +1,57 @@
+﻿@model WebAppCinemaBooking.Areas.Admin.Models.Staf
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Xóa Nhân Viên</h1>
+
+<h3>Bạn Có Chắc Chắn Muốn Xóa Nhân Viên Này?</h3>
+<div>
+    <h4>Nhân Viên</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           Tên Nhân Viên:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+           Email Nhân Viên:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+           Hình Ảnh:
+        </dt>
+        <dd class = "col-sm-10">
+            <img src="~/Uploads/Avatar-Staf/@Html.DisplayFor(model => model.Avatar)"style="max-width:300px" />
+        </dd>
+        <dt class = "col-sm-2">
+            Số Điện Thoại:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            Địa Chỉ:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            Trạng Thái:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index">Trở Về</a>
+    </form>
+</div>

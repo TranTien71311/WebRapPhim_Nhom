@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebAppCinemaBooking.Areas.Admin.Models.Cinema>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    a label.fa{
+        font-size:20px;
+        display:block;
+    }
+    a label.fa.fa-lock {
+        color:red;
+    }
+    a label.fa.fa-unlock-alt {
+        color:green;
+    }
+</style>
+
+<h1>Danh Sách Rạp Phim</h1>
+
+<p>
+    <a asp-action="Create">Thêm Rạp Phim</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên Rạp
+            </th>
+            <th>
+                Địa Chỉ Rạp
+            </th>
+            <th>
+                Trạng Thái
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @if (item.Status == 1)
+                {
+                    <a href=""><label class="fa fa-unlock-alt"></label></a>
+                }
+                else if(item.Status ==0)
+                {
+                    <a href=""><label class="fa fa-lock"></label></a>
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Chi Tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

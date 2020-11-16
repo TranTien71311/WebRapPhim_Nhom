@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAppCinemaBooking.Areas.Admin.Models;
 
-namespace WebAppCinemaBooking.Areas.Admin_0306181057.Data
+namespace WebAppCinemaBooking.Areas.Admin.Data
 {
     public class DPContext : DbContext
     {
@@ -13,6 +13,7 @@ namespace WebAppCinemaBooking.Areas.Admin_0306181057.Data
         {
 
         }
-
+        public DbSet<Staf> Stafs { get; set; }
+        public DbSet<Cinema> Cinemas { get; set; }
     }
 }
