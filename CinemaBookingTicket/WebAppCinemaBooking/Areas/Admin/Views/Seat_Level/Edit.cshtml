@@ -4,61 +4,102 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Sửa Loại Ghế</h1>
 
-<h4>Seat_Level</h4>
+<h4>Loại Ghế</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col-md">
+        <form asp-action="Edit"enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label class="control-label">Tên:</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="ful" name="ful" />
+                <label class="custom-file-label" for="ful">Choose image</label>
             </div>
             <div class="form-group">
-                <label asp-for="Image_Selected" class="control-label"></label>
-                <input asp-for="Image_Selected" class="form-control" />
-                <span asp-validation-for="Image_Selected" class="text-danger"></span>
+                <img id="imgPre" src="~/Uploads/Seat_Level/@Model.Image" alt="no image" class="img-thumbnail" style="max-width:100px" />
+                <input type="hidden" asp-for="Image" />
+            </div>
+
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="ful_selected" name="ful_selected" />
+                <label class="custom-file-label" for="ful_selected">Choose image selected</label>
             </div>
             <div class="form-group">
-                <label asp-for="Image_Checked" class="control-label"></label>
-                <input asp-for="Image_Checked" class="form-control" />
-                <span asp-validation-for="Image_Checked" class="text-danger"></span>
+                <img id="imgPre_selected" src="~/Uploads/Seat_Level/@Model.Image_Selected" alt="no image" class="img-thumbnail" style="max-width:100px" />
+                <input type="hidden" asp-for="Image_Selected" />
+            </div>
+
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="ful_checked" name="ful_checked" />
+                <label class="custom-file-label" for="ful_checked">Choose image checked</label>
             </div>
             <div class="form-group">
-                <label asp-for="Count_Cell" class="control-label"></label>
+                <img id="imgPre_checked" src="~/Uploads/Seat_Level/@Model.Image_Checked" alt="no image" class="img-thumbnail" style="max-width:100px" />
+                <input type="hidden" asp-for="Image_Checked" />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Số chổ:</label>
                 <input asp-for="Count_Cell" class="form-control" />
                 <span asp-validation-for="Count_Cell" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
+                <label class="control-label">Giá:</label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
+                <label class="control-label">Trạng Thái:</label>
+                <select asp-for="Status" class="form-control">
+                    <option value="1">Kích Hoạt</option>
+                    <option value="0">Không Kích Hoạt</option>
+                </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Sửa" class="btn " style="width:300px;background-color: #26c6da;" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn " style="width:300px;margin-bottom: 10px;background-color: #1ea6c1;">Trở Về</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function readURL(input, idImg) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(idImg).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+
+        $("#ful").change(function () {
+            readURL(this, '#imgPre');
+        });
+
+        $("#ful_selected").change(function () {
+            readURL(this, '#imgPre_selected');
+        });
+
+        $("#ful_checked").change(function () {
+            readURL(this, '#imgPre_checked');
+        });
+
+    </script>
 }

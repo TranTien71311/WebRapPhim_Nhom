@@ -1,28 +1,44 @@
-﻿@model IEnumerable<WebAppCinemaBooking.Areas.Admin.Models.Seat>
-
+﻿@model WebAppCinemaBooking.Areas.Admin.Models.Seat
 @{
     ViewData["Title"] = "Index";
 }
 
 <center>
-    <h2>Sơ Đồ Ghế thuộc @Model.First().Room.Name</h2>
+    <h2>Sơ Đồ Ghế thuộc @ViewBag.Room.Name</h2>
 </center>
 
 <table class="table">
-    @for (int i = 1; i <= 15; i++)
+    @for (int i = 0; i <= 15; i++)
     {
-        <tr>
-            @for (int j = 1; j <= 15; j++)
+    <tr>
+        @for (int j = 0; j <= 15; j++)
+        {
+            if (i == 0 && j == 0)
+            {
+                <td style="text-align: center;font-weight:bold;">@i</td>
+            }
+            else if (i == 0)
+            {
+                <td style="text-align: center;font-weight:bold;">@j</td>
+            }
+            else if (j == 0)
+            {
+                <td style="text-align: center;font-weight:bold;">@i</td>
+            }
+            else
             {
                 <td style="width: 6.666%;height: auto;text-align: center;border: 2px solid #002447;" id="@i@j" colspan="1">
-                    <a style='display:block;' asp-controller="Seats" asp-action="Create"><lable class='fa fa-plus'></lable></a>
+                    <a href="#" data-idroom="@ViewBag.Room.ID" data-row="@i" data-col="@j" data-target="#seat" data-toggle="modal" class="identifyingClass"><label class="fa fa-plus"></label></a>
                 </td>
             }
-        </tr>
+
+
+        }
+    </tr>
     }
 </table>
 
-@foreach (var item in Model)
+@foreach (var item in ViewBag.ListSeat)
 {
     int row = item.Row_ID;
     int col = item.Col_ID;
@@ -43,31 +59,52 @@
         }
     }
 }
-@*<a href="#" data-target="#my_modal" data-toggle="modal" class="identifyingClass" id="123456" onclick="aaa();" data-id="123">Open Modal</a>
 
-<div class="modal fade" id="my_modal" tabindex="-1" role="dialog" aria-labelledby="my_modalLabel">
-    <div class="modal-dialog" role="dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal Title</h4>
-            </div>
-            <div class="modal-body">
-                Modal Body
-                <input type="text" name="hiddenValue" id="hiddenValue" value="" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                <button type="button" class="btn btn-primary">Yes</button>
+<div class="modal fade" id="seat" tabindex="-1" role="dialog" aria-labelledby="my_modalLabel">
+    <form asp-area="Admin" asp-controller="Seats" asp-action="Create">
+        <div class="modal-dialog" role="dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Thêm Ghế</h4>
+                </div>
+
+                <div class="modal-body">
+                    <input type="hidden" name="Room_ID" id="idroom" value="" />
+                    <input type="hidden" name="Row_ID" id="row" value="" />
+                    <input type="hidden" name="Col_ID" id="col" value="" />
+                    <input type="hidden" name="Status" value="1" />
+                    <div class="form-group">
+                        <label class="control-label">Tên:</label>
+                        <input type="text" name="Name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Loại Ghế:</label>
+                        <select class="form-control" name="Seat_Level_ID">
+                            @foreach (var item in ViewBag.Seat_Level)
+                            {
+                                <option value="@item.ID">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
-    <script type="text/javascript">
-        function aaa(event) {
-            var a = document.getElementById('#123456');
 
-            var my_id_value = a.data('id');
-            $(".modal-body #hiddenValue").val(my_id_value);
-        };
-    </script>*@
+<script type="text/javascript">
+    $(document).on("click", ".identifyingClass", function () {
+        var idroom = $(this).data('idroom');
+        $(".modal-body #idroom").val(idroom);
+        var row = $(this).data('row');
+        $(".modal-body #row").val(row);
+        var col = $(this).data('col');
+        $(".modal-body #col").val(col);
+    });
+</script>

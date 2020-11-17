@@ -27,9 +27,12 @@ namespace WebAppCinemaBooking.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
-            var dPContext = _context.Seats.Include(s => s.Room).Include(s => s.Seat_Level).Where(s=>s.Room_ID.Equals(id));    
-            return View(await dPContext.ToListAsync());
+            var room = _context.Rooms.Where(r => r.ID.Equals(id)).First();
+            ViewBag.Room = room;
+            ViewBag.Seat_Level = _context.Seat_Levels.ToList();
+            var dPContext = _context.Seats.Include(s => s.Room).Include(s => s.Seat_Level).Where(s=>s.Room_ID.Equals(id));
+            ViewBag.ListSeat = dPContext.ToList();
+            return View();
         }
 
         // GET: Admin/Seats/Details/5
@@ -50,14 +53,6 @@ namespace WebAppCinemaBooking.Areas.Admin.Controllers
             }
 
             return View(seat);
-        }
-
-        // GET: Admin/Seats/Create
-        public IActionResult Create()
-        {
-            ViewData["Room_ID"] = new SelectList(_context.Rooms, "ID", "Name");
-            ViewData["Seat_Level_ID"] = new SelectList(_context.Seat_Levels, "ID", "Name");
-            return View();
         }
 
         // POST: Admin/Seats/Create

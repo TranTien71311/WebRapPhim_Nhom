@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OOAioemyjuDK4qWvt29sW09mDbCKflEVhj+rITyqkyJbekcNaLqLUcyfUlSJoF7gNhBFGrtxjAuICtU+dDuvtA==",
+  "dgSpecHash": "FZDZAbgT4/3BSnX8lw9kCG0GnJ1oN7z26NF7r90BbdPwjU96XHA+Yn/icK9oVWalLE73hAr/26XOJQujdC4geQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nhat-Minh\\Desktop\\CinemeBooking\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nhat-Minh\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Nhat-Minh\\.nuget\\packages\\jquery\\3.5.1\\jquery.3.5.1.nupkg.sha512",
     "C:\\Users\\Nhat-Minh\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Nhat-Minh\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Nhat-Minh\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

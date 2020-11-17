@@ -4,51 +4,53 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Chi Tiết Ghế: </h1>
 
 <div>
-    <h4>Seat</h4>
+    <h4>Ghế:</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+        <dt class="col-sm-2">
+            Tên:
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Row_ID)
+        <dt class="col-sm-2">
+            Tọa Độ Hàng:
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Row_ID)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Col_ID)
+        <dt class="col-sm-2">
+            Tọa Độ Cột:
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Col_ID)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
+        <dt class="col-sm-2">
+            Trạng Thái:
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Status)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Room)
+        <dt class="col-sm-2">
+            Phòng:
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Room.Name)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Seat_Level)
+        <dt class="col-sm-2">
+            Loại Ghế:
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Seat_Level.Name)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a asp-action="Index" asp-route-id="@Model.Room_ID">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn" style="width:300px;margin-bottom: 10px;background-color: #26c6da;">Sửa</a><br />
+    <a asp-action="Delete" asp-route-id="@Model.ID" class="btn" style="        width: 300px;margin-bottom: 10px;background-color: #1ea6c1;">Xóa</a><br />
+    <a asp-action="Index" asp-route-id="@Model.Room_ID" class="btn" style="width: 300px;margin-bottom: 10px;background-color: #26c6da;">Trở Về</a>
+
 </div>
