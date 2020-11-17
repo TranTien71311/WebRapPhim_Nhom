@@ -9,7 +9,7 @@ using WebAppCinemaBooking.Areas.Admin.Data;
 namespace WebAppCinemaBooking.Migrations
 {
     [DbContext(typeof(DPContext))]
-    [Migration("20201116071201_CreateDB")]
+    [Migration("20201116180357_CreateDB")]
     partial class CreateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,6 +79,75 @@ namespace WebAppCinemaBooking.Migrations
                     b.ToTable("Rooms");
                 });
 
+            modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Seat", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Col_ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Room_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Row_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Seat_Level_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("Room_ID");
+
+                    b.HasIndex("Seat_Level_ID");
+
+                    b.ToTable("Seats");
+                });
+
+            modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Seat_Level", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Count_Cell")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image_Checked")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image_Selected")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Seat_Levels");
+                });
+
             modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Staf", b =>
                 {
                     b.Property<int>("ID")
@@ -137,9 +206,38 @@ namespace WebAppCinemaBooking.Migrations
                     b.Navigation("Cinema");
                 });
 
+            modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Seat", b =>
+                {
+                    b.HasOne("WebAppCinemaBooking.Areas.Admin.Models.Room", "Room")
+                        .WithMany("listSeat")
+                        .HasForeignKey("Room_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebAppCinemaBooking.Areas.Admin.Models.Seat_Level", "Seat_Level")
+                        .WithMany("listSeat")
+                        .HasForeignKey("Seat_Level_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Room");
+
+                    b.Navigation("Seat_Level");
+                });
+
             modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Cinema", b =>
                 {
                     b.Navigation("listRoom");
+                });
+
+            modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Room", b =>
+                {
+                    b.Navigation("listSeat");
+                });
+
+            modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Seat_Level", b =>
+                {
+                    b.Navigation("listSeat");
                 });
 
             modelBuilder.Entity("WebAppCinemaBooking.Areas.Admin.Models.Staf", b =>

@@ -27,6 +27,9 @@
     a label.fa.fa-unlock-alt {
         color: green;
     }
+    a label.fa.fa-eye {
+        color: green;
+    }
 </style>
 
 <h1>Phòng</h1>
@@ -46,7 +49,7 @@
             <th>
                 Trạng Thái:
             </th>
-
+            <th>Xem Sơ Đồ</th>
             <th></th>
         </tr>
     </thead>
@@ -70,12 +73,16 @@
                 }
             </td>
             <td>
+                <a asp-area="Admin" asp-controller="Seats" asp-action="Index" asp-route-id="@item.ID"><label class="fa fa-eye"></label></a>
+            </td>
+            <td>
                 <div class="btn-group">
                     <a asp-action="Edit" asp-route-id="@item.ID" class="btn" style="background-color: #26c6da;">Sửa</a>
                     <a asp-action="Details" asp-route-id="@item.ID" class="btn" style="background-color: #1ea6c1;">Chi Tiết</a>
                     <a asp-action="Delete" asp-route-id="@item.ID" class="btn" style="background-color: #26c6da;">Xóa</a>
                 </div>
             </td>
+            
         </tr>
 }
     </tbody>

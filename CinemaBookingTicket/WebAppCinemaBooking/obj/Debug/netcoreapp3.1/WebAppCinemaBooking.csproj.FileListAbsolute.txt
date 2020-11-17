@@ -341,3 +341,13 @@ C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Rooms\Details.cshtml.g.cs
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Rooms\Edit.cshtml.g.cs
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Rooms\Index.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seats\Create.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seats\Delete.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seats\Details.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seats\Edit.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seat_Level\Create.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seat_Level\Delete.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seat_Level\Details.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seat_Level\Edit.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seat_Level\Index.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seats\Index.cshtml.g.cs
