@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="wwwroot\Uploads\Movie\" />
     <Folder Include="wwwroot\Uploads\Seat_Level\" />
   </ItemGroup>
 

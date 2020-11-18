@@ -4,98 +4,81 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<style>
+    th {
+        text-align: center;
+    }
+
+    td {
+        font-size: 16px;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    a label.fa {
+        font-size: 20px;
+        display: block;
+        line-height: 40px;
+    }
+
+        a label.fa.fa-lock {
+            color: red;
+        }
+
+        a label.fa.fa-unlock-alt {
+            color: green;
+        }
+</style>
+
+<h1>Danh Sách Phim</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-block" style="background-color: #26c6da;">Thêm Phim</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Tên Phim:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Image)
+                Ngày Khởi Chiếu:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Trailer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Directors)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cast)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Release_Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Running_Time)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Language)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rated)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
+                Trạng Thái:
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Trailer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Directors)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cast)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Release_Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Running_Time)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Language)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Desc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Release_Date)
+                </td>
+                <td>
+                    @if (item.Status == 1)
+                    {
+                        <a asp-action="UnActive" asp-route-id="@item.ID"><label class="fa fa-unlock-alt"></label></a>
+                    }
+                    else if (item.Status == 0)
+                    {
+                        <a asp-action="Active" asp-route-id="@item.ID"><label class="fa fa-lock"></label></a>
+                    }
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn" style="background-color: #26c6da;">Sửa</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="btn" style="background-color: #1ea6c1;">Chi Tiết</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn" style="background-color: #26c6da;">Xóa</a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
