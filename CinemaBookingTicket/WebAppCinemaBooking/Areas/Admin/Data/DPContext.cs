@@ -18,6 +18,8 @@ namespace WebAppCinemaBooking.Areas.Admin.Data
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Seat_Level> Seat_Levels { get; set; }
         public DbSet<Seat> Seats { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        
 
     }
 }

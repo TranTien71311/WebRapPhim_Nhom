@@ -350,3 +350,8 @@ C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Seats\Index.cshtml.g.cs
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\WebAppCinemaBooking.csproj.CoreCompileInputs.cache
 C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\WebAppCinemaBooking.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Create.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Delete.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Details.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Edit.cshtml.g.cs
+C:\Users\Nhat-Minh\Desktop\CinemeBooking\CinemaBookingTicket\WebAppCinemaBooking\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Movies\Index.cshtml.g.cs
