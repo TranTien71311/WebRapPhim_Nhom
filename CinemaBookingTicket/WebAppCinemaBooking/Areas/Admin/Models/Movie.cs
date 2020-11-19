@@ -17,7 +17,7 @@ namespace WebAppCinemaBooking.Areas.Admin.Models
         public string Cast { get; set; }
         public string Genre { get; set; }
         [Required(ErrorMessage = "Ngày khởi chiếu không được bỏ trống")] public DateTime Release_Date { get; set; }
-        [Required(ErrorMessage = "Thời lượng không được bỏ trống")] public string Running_Time { get; set; }
+        [Required(ErrorMessage = "Thời lượng không được bỏ trống")] public int Running_Time { get; set; }
         public string Language { get; set; }
         public string Rated { get; set; }
         public string Desc { get; set; }

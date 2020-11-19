@@ -20,7 +20,7 @@ namespace WebAppCinemaBooking.Migrations
                     Cast = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Genre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Release_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Running_Time = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Running_Time = table.Column<int>(type: "int", nullable: false),
                     Language = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Rated = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Desc = table.Column<string>(type: "nvarchar(max)", nullable: true),

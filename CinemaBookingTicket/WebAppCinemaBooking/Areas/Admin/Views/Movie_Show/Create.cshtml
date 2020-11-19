@@ -1,0 +1,99 @@
+﻿@model WebAppCinemaBooking.Areas.Admin.Models.Movie_Show
+
+@{
+    ViewData["Title"] = "Create";
+    string Convert(int tg)
+    {
+        int h = tg / 60;
+        int m = tg % 60;
+
+        return h+":"+m;
+    }
+}
+
+
+<center>
+    <h2>Lịch Chiếu Của Rạp @ViewBag.Cinema.Name</h2>
+</center>
+<div class="table-responsive">
+    <table class="table">
+        @for (int i = -1; i < ViewBag.listRoom.Length; i++)
+        {
+            <tr>
+                @for (int j = 41; j <= 144; j++)
+                {
+
+                    if (j == 41)
+                    {
+                        <td style="min-width:100px;text-align: center;font-weight:bold;line-height:50px;border-right:2px solid #808080;">@if (i != -1)@ViewBag.listRoom[i].Name</td>
+                    }
+                    else if (i == -1)
+                    {
+                        <td style="text-align: center;font-weight:bold;">@Convert(j * 10)</td>
+                    }
+                    else
+                    {
+                        <td style="width: 1.111%;height: auto;text-align: center;padding:unset;" id="@i@j" colspan="1">
+                            <a href="#" style="display:block;line-height:80px" title="@i@j"><p style="opacity:0">123</p></a>
+                        </td>
+                    }
+
+
+                }
+            </tr>
+        }
+    </table>
+</div>
+
+
+
+
+
+
+
+
+    @*<h1>Create</h1>
+
+        <h4>Movie_Show</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Start_Show" class="control-label"></label>
+                        <input asp-for="Start_Show" class="form-control" />
+                        <span asp-validation-for="Start_Show" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Status" class="control-label"></label>
+                        <input asp-for="Status" class="form-control" />
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Room_ID" class="control-label"></label>
+                        <select asp-for="Room_ID" class ="form-control" asp-items="ViewBag.Room_ID"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Movie_ID" class="control-label"></label>
+                        <select asp-for="Movie_ID" class ="form-control" asp-items="ViewBag.Movie_ID"></select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>*@
+
+
+
+
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

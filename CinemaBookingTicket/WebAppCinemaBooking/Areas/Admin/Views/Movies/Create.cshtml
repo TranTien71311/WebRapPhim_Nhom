@@ -19,14 +19,14 @@
             </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="ful" name="ful" />
-                <label class="custom-file-label" for="ful">Choose file</label>
+                <label class="custom-file-label" for="ful">Choose image</label>
             </div>
             <div class="form-group">
                 <img id="imgPre" src="~/admin-asset/noimage.png" alt="no image" class="img-thumbnail" style="max-width:300px" />
             </div>
             <div class="form-group">
-                <label class="control-label">Link Trailer Phim:</label>
-                <input asp-for="Trailer" class="form-control" placeholder="Link Trailer Phim" />
+                <label class="control-label">Nhúng Trailer:</label>
+                <input asp-for="Trailer" class="form-control" />
                 <span asp-validation-for="Trailer" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -50,7 +50,7 @@
                 <span asp-validation-for="Release_Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Thời Lượng</label>
+                <label class="control-label">Thời Lượng: (Đơn vị: phút)</label>
                 <input asp-for="Running_Time" class="form-control" />
                 <span asp-validation-for="Running_Time" class="text-danger"></span>
             </div>
@@ -108,6 +108,5 @@
         $("#ful").change(function () {
             readURL(this, '#imgPre');
         });
-
 </script>
 }

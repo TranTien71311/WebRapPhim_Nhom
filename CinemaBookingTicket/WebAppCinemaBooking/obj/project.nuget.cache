@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VBiU0DqY9Dwaq2xglfY8+cLiHuaaXqI6tsWEPtd4yA0nFkbgvYk/VAAn4hkb80e6JOFt6MV+Xybu9C9jccrEMQ==",
+  "dgSpecHash": "5zZojfddtDc4EgtRogcmZvmj4cbvnuaxPLFI1f7WQBLeMDGSDDpvau0vsWCMl6ZWqisyc7v6gCH+ih/0s7HYfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nhat-Minh\\Desktop\\CinemeBooking\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
+  "projectFilePath": "C:\\Users\\Nhat-Minh\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nhat-Minh\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Nhat-Minh\\.nuget\\packages\\jquery\\3.5.1\\jquery.3.5.1.nupkg.sha512",
