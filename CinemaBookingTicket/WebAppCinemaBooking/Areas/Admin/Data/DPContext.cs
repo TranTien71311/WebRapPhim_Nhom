@@ -20,6 +20,7 @@ namespace WebAppCinemaBooking.Areas.Admin.Data
         public DbSet<Seat> Seats { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Movie_Show> Movie_Shows { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
     }
 }
