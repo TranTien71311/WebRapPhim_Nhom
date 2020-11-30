@@ -8973,20 +8973,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nhat-Minh\\.nuget\\packages\\": {}
+    "C:\\Users\\VK Be\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nhat-Minh\\Desktop\\ASPCinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
+      "projectUniqueName": "C:\\Users\\VK Be\\Desktop\\CinemaBooking\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
       "projectName": "WebAppCinemaBooking",
-      "projectPath": "C:\\Users\\Nhat-Minh\\Desktop\\ASPCinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
-      "packagesPath": "C:\\Users\\Nhat-Minh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nhat-Minh\\Desktop\\ASPCinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\obj\\",
+      "projectPath": "C:\\Users\\VK Be\\Desktop\\CinemaBooking\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
+      "packagesPath": "C:\\Users\\VK Be\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\VK Be\\Desktop\\CinemaBooking\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Nhat-Minh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\VK Be\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9042,6 +9047,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

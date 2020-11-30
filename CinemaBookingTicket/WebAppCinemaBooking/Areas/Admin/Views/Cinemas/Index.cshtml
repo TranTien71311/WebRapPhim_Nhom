@@ -14,25 +14,25 @@
         line-height: 40px;
     }
 
-    a label.fa {
+    button i.fa {
         font-size: 20px;
         display: block;
         line-height: 40px;
     }
 
-    a label.fa.fa-lock {
-        color: red;
-    }
+        button i.fa.fa-lock {
+            color: red;
+        }
 
-    a label.fa.fa-unlock-alt {
-        color: green;
-    }
+        button i.fa.fa-unlock-alt {
+            color: green;
+        }
 </style>
 
 <h1>Danh Sách Rạp Phim</h1>
 
 <p>
-    <a asp-action="Create"class="btn btn-block" style="background-color: #26c6da;">Thêm Rạp Phim</a>
+    <a asp-action="Create" class="btn btn-block" style="background-color: #26c6da;">Thêm Rạp Phim</a>
 </p>
 <table class="table">
     <thead>
@@ -52,31 +52,55 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @if (item.Status == 1)
-                {
-                    <a asp-action="UnActive" asp-route-id="@item.ID"><label class="fa fa-unlock-alt"></label></a>
-                }
-                else if (item.Status == 0)
-                {
-                    <a asp-action="Active" asp-route-id="@item.ID"><label class="fa fa-lock"></label></a>
-                }
-            </td>
-            <td>
-                <div class="btn-group">
-                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn" style="background-color: #26c6da;">Sửa</a>
-                    <a asp-action="Details" asp-route-id="@item.ID" class="btn" style="background-color: #1ea6c1;">Chi Tiết</a>
-                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn" style="background-color: #26c6da;">Xóa</a>
-                </div>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @if (item.Status == 1)
+                    {
+                        <button data-id="@item.ID" name="btnStatus" class="btn btn-link"><i class="fa fa-unlock-alt"></i></button>
+                    }
+                    else if (item.Status == 0)
+                    {
+                        <button data-id="@item.ID" name="btnStatus" class="btn btn-link"><i class="fa fa-lock"></i></button>
+                    }
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn" style="background-color: #26c6da;">Sửa</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="btn" style="background-color: #1ea6c1;">Chi Tiết</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn" style="background-color: #26c6da;">Xóa</a>
+                    </div>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $('button[name =btnStatus]').click(function () {
+            var id = $(this).data('id');
+            var btn = $(this);
+            $.ajax({
+                method: "GET",
+                url: "../API/CinemasAPI/ChangeStatus",
+                data: { 'id': id }
+            })
+                .done(function (msg) {
+                var obj = JSON.parse(msg);
+                if (obj.Status == 0) {
+                    btn.children().removeClass('fa fa-unlock-alt');
+                    btn.children().addClass('fa fa-lock');
+                } else {
+                    btn.children().removeClass('fa fa-lock');
+                    btn.children().addClass('fa fa-unlock-alt');
+                }
+            });
+        });
+    </script>
+}
