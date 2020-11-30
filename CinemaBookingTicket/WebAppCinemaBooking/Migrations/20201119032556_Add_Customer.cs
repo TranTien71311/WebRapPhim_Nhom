@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace WebAppCinemaBooking.Migrations
 {
@@ -13,10 +14,10 @@ namespace WebAppCinemaBooking.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Pass = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BirthDay = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Pass = table.Column<string>(type: "nvarchar(max)", nullable: false),                    
+                    BirthDay = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),                    
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Total_Spending = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Avatar = table.Column<string>(type: "nvarchar(max)", nullable: true),

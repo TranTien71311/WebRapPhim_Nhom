@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nhat-Minh\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj": {}
+    "D:\\HK5\\LTWASP\\ASPNETDoAn\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nhat-Minh\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj": {
+    "D:\\HK5\\LTWASP\\ASPNETDoAn\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nhat-Minh\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
+        "projectUniqueName": "D:\\HK5\\LTWASP\\ASPNETDoAn\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
         "projectName": "WebAppCinemaBooking",
-        "projectPath": "C:\\Users\\Nhat-Minh\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
-        "packagesPath": "C:\\Users\\Nhat-Minh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nhat-Minh\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\obj\\",
+        "projectPath": "D:\\HK5\\LTWASP\\ASPNETDoAn\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "D:\\HK5\\LTWASP\\ASPNETDoAn\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nhat-Minh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -71,6 +73,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -79,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

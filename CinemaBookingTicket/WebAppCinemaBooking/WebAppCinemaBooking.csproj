@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="wwwroot\Uploads\Avatar-Customer\" />
     <Folder Include="wwwroot\Uploads\Seat_Level\" />
   </ItemGroup>
 

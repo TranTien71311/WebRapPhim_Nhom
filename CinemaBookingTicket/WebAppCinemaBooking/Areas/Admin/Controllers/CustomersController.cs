@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -55,11 +57,21 @@ namespace WebAppCinemaBooking.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Pass,Email,BirthDay,Address,Phone,Total_Spending,Avatar,Status")] Customer customer)
+        public async Task<IActionResult> Create([Bind("ID,Name,Pass,Email,BirthDay,Address,Phone,Total_Spending,Avatar,Status")] Customer customer, IFormFile ful)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(customer);
+                await _context.SaveChangesAsync();
+                var tenImg = customer.ID + "." + ful.FileName.Split(".")[ful.FileName.Split(".").Length - 1];
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Uploads/Avatar-Customer", tenImg);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await ful.CopyToAsync(stream);
+
+                }
+                customer.Avatar = tenImg;
+                _context.Update(customer);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -87,7 +99,7 @@ namespace WebAppCinemaBooking.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Pass,Email,BirthDay,Address,Phone,Total_Spending,Avatar,Status")] Customer customer)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Pass,Email,BirthDay,Address,Phone,Total_Spending,Avatar,Status")] Customer customer, IFormFile ful)
         {
             if (id != customer.ID)
             {
@@ -98,6 +110,18 @@ namespace WebAppCinemaBooking.Areas.Admin.Controllers
             {
                 try
                 {
+                    if (ful != null)
+                    {
+                        var tenImg = customer.ID + "." + ful.FileName.Split(".")[ful.FileName.Split(".").Length - 1];
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Uploads/Avatar-Customer", customer.Avatar);
+                        System.IO.File.Delete(path);
+                        path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Uploads/Avatar-Customer", tenImg);
+                        using (var stream = new FileStream(path, FileMode.Create))
+                        {
+                            await ful.CopyToAsync(stream);
+                        }
+                        customer.Avatar = tenImg;
+                    }
                     _context.Update(customer);
                     await _context.SaveChangesAsync();
                 }
