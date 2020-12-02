@@ -174,5 +174,44 @@ namespace WebAppCinemaBooking.Areas.Admin.Controllers
         {
             return _context.Customers.Any(e => e.ID == id);
         }
+        public async Task<IActionResult> Active(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var customer = await _context.Customers
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            customer.Status = 1;
+            _context.Customers.Update(customer);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> UnActive(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var customer = await _context.Customers
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            customer.Status = 0;
+            _context.Customers.Update(customer);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
