@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DoAnASP\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj": {}
+    "C:\\Users\\VK Be\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj": {}
   },
   "projects": {
-    "E:\\DoAnASP\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj": {
+    "C:\\Users\\VK Be\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DoAnASP\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
+        "projectUniqueName": "C:\\Users\\VK Be\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
         "projectName": "WebAppCinemaBooking",
-        "projectPath": "E:\\DoAnASP\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\DoAnASP\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\obj\\",
+        "projectPath": "C:\\Users\\VK Be\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\WebAppCinemaBooking.csproj",
+        "packagesPath": "C:\\Users\\VK Be\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\VK Be\\Desktop\\Cinema\\CinemaBookingTicket\\CinemaBookingTicket\\WebAppCinemaBooking\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\VK Be\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -71,6 +75,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
