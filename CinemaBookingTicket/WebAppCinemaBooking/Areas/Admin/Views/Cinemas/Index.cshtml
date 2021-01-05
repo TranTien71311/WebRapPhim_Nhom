@@ -44,9 +44,16 @@
                 Địa Chỉ Rạp
             </th>
             <th>
+                Lịch Chiếu
+            </th>
+            <th>
                 Trạng Thái
             </th>
-            <th></th>
+
+
+            <th>
+
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -58,6 +65,12 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    <form asp-area="Admin" asp-controller="Movie_Show" asp-action="Create" method="get">
+                        <input type="hidden" name="idCinema" value="@item.ID" />
+                        <button type="submit" class="btn btn-link"><i class="fa fa-eye"></i></button>
+                    </form>
                 </td>
                 <td>
                     @if (item.Status == 1)

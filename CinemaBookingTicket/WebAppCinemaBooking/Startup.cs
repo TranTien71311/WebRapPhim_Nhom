@@ -46,11 +46,17 @@ namespace WebAppCinemaBooking
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapAreaControllerRoute(
+  
+                endpoints.MapControllerRoute(
                     name: "admin",
-                    areaName:"Admin",
                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
+                endpoints.MapControllerRoute(
+                     name: "default",
+                     pattern: "{controller=Home}/{action=Index}/{id?}"
+                 );
+
+
             });
         }
     }
